@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../assets/logo-white.png";
 import { NavLink } from "react-router";
+
 const Navbar = () => {
   return (
-    <div className="bg-[#F2F2F2] py-3">
+    <div className="bg-[#F2F2F2] dark:bg-[bg-gray-500 py-3">
       <div className="navbar p-0  w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -132,6 +133,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
         <div className="navbar-end">
           <button className="lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-3xl  px-8 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200 ">
             Login
