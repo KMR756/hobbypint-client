@@ -8,6 +8,7 @@ import AboutUs from "../pages/AboutUs";
 import Contract from "../pages/Contract";
 import Policy from "../pages/Policy";
 import Error from "../pages/Error";
+import Loading from "../components/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         loader: () => fetch("http://localhost:3000/groups"),
+        hydrateFallbackElement: <Loading></Loading>,
         Component: Home,
       },
       {
