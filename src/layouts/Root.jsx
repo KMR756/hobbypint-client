@@ -8,7 +8,7 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <Slider />
+
       <Outlet />
       <Footer />
     </>

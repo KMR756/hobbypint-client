@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../assets/logo-white.png";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="bg-[#F2F2F2] dark:bg-[bg-gray-500 py-3">
+    <div className="bg-[#F2F2F2]  py-3">
       <div className="navbar p-0  w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -79,7 +79,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img className="h-10 md:h-15 lg:h-18 xl:h-20" src={logo} alt="" />
+          <Link to={"/"}>
+            <img className="h-10 md:h-15 lg:h-18 xl:h-20" src={logo} alt="" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="flex   gap-5 ">
