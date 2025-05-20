@@ -1,13 +1,38 @@
 import React from "react";
+import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const CreateGroup = () => {
+  const navigation = useNavigate();
   const handleForm = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     // console.log(formData);
     const newGroup = Object.fromEntries(formData);
-    console.log(newGroup);
+    // console.log(newGroup);
+
+    // sent data to DB
+    fetch("http://localhost:3000/groups", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newGroup),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+
+        if (data.insertedId) {
+          Swal.fire({
+            title: `${newGroup.groupName} is successfully added.`,
+            icon: "success",
+            draggable: true,
+          });
+          navigation("/myGroups");
+        }
+      });
     e.target.reset();
   };
   return (
