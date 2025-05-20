@@ -7,11 +7,13 @@ import MyGroup from "../pages/MyGroup";
 import AboutUs from "../pages/AboutUs";
 import Contract from "../pages/Contract";
 import Policy from "../pages/Policy";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
