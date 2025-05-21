@@ -24,6 +24,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "allGroup",
+        loader: () => fetch("http://localhost:3000/groups"),
+        hydrateFallbackElement: <Loading></Loading>,
         Component: AllGroup,
       },
       {

@@ -9,10 +9,10 @@ import update from "../assets/update.json";
 const WhyJoint = () => {
   return (
     <>
-      <div className="w-[98%] lg:w-10/12 mx-auto mt-15 px-7">
+      <div className="w-full lg:w-10/12 mx-auto mt-15 px-7">
         <Fade direction="up" duration={2000} triggerOnce>
           {" "}
-          <h2 className="lato-bold text-6xl text-[#C30E59] ">
+          <h2 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] ">
             Why Join HobbyPoint?
           </h2>
         </Fade>

@@ -5,7 +5,7 @@ import React from "react";
 const Loading = () => {
   return (
     <div className="w-full flex h-screen justify-center items-center">
-      <Lottie animationData={loading} className="w-1/6  " />
+      <Lottie animationData={loading} className="w-1/6" />
     </div>
   );
 };
