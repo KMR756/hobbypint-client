@@ -5,7 +5,21 @@ import AllGroup from "../pages/AllGroup";
 
 const HomeGroups = ({ groups }) => {
   // console.log(groups);
-  const visibleGroups = groups.slice(0, 6);
+  const today = new Date();
+
+  today.setHours(0, 0, 0, 0);
+  // console.log(today);
+
+  const upcomingGroup = groups.filter((group) => {
+    // console.log(group);
+    if (!group.startDate) return false;
+    const groupDate = new Date(group.startDate);
+
+    groupDate.setHours(0, 0, 0, 0);
+    // console.log(groupDate);
+    return groupDate >= today;
+  });
+  const visibleGroups = upcomingGroup.slice(0, 6);
   return (
     <>
       <Fade

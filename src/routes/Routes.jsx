@@ -47,6 +47,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myGroups",
+        loader: () => fetch("http://localhost:3000/groups"),
+        hydrateFallbackElement: <Loading></Loading>,
         element: (
           <PrivateRoute>
             <MyGroup></MyGroup>

@@ -1,7 +1,33 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const GroupDetailsCard = ({ group }) => {
-  console.log(group);
+  const handleJointGroup = () => {
+    // console.log("try to joint");
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    // console.log(today);
+
+    const groupDate = new Date(group.startDate);
+
+    groupDate.setHours(0, 0, 0, 0);
+    if (groupDate >= today) {
+      Swal.fire({
+        title: "Joint this group successfully!!",
+        icon: "success",
+        draggable: true,
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Date is over...",
+        footer: '<a href="#">Please try another group</a>',
+      });
+    }
+    // console.log(groupDate);
+  };
+  // console.log(group);
   const {
     _id,
     description,
@@ -12,7 +38,7 @@ const GroupDetailsCard = ({ group }) => {
     location,
     maxMember,
     startDate,
-    userName,
+    name,
   } = group;
   return (
     <>
@@ -33,7 +59,7 @@ const GroupDetailsCard = ({ group }) => {
               <span className="font-bold lg:text-3xl text-xl">
                 Group creator name:
               </span>{" "}
-              {userName}
+              {name}
             </h1>
             <hr />
             <h1 className="lato text-xl lg:text-2xl py-5">
@@ -63,7 +89,10 @@ const GroupDetailsCard = ({ group }) => {
             </div>
             <p></p>
             <div className="card-actions justify-center ">
-              <button className="btn bg-[#C30E59] text-white text-xl font-black w-full">
+              <button
+                onClick={handleJointGroup}
+                className="btn bg-[#C30E59] text-white text-xl font-black w-full"
+              >
                 Joint Group
               </button>
             </div>
