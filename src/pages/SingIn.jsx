@@ -1,12 +1,16 @@
 import React, { use } from "react";
 import singIn from "/sign-in.svg";
 import logo from "../assets/logo-white.png";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 const SingIn = () => {
   const { logIn, googleLogIn } = use(AuthContext);
+  const location = useLocation();
+  // console.log(location);
+  const navigate = useNavigate();
   const handleGoogleLogin = () => {
     googleLogIn();
+    navigate(`${location.state ? location.state : "/"}`);
   };
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -20,6 +24,7 @@ const SingIn = () => {
         // Signed in
         const user = result.user;
         console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
 
         // ...
       })

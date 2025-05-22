@@ -12,6 +12,8 @@ import Loading from "../components/Loading";
 import AuthLayout from "../layouts/AuthLayout";
 import SingIn from "../pages/SingIn";
 import SingUp from "../pages/SingUp";
+import GroupDetails from "../pages/GroupDetails";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,16 @@ export const router = createBrowserRouter([
       {
         path: "/policy",
         Component: Policy,
+      },
+      {
+        path: "/group-details/:id",
+        loader: () => fetch("http://localhost:3000/groups"),
+        hydrateFallbackElement: <Loading></Loading>,
+        element: (
+          <PrivateRoute>
+            <GroupDetails></GroupDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

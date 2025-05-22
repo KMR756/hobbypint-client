@@ -2,6 +2,7 @@ import React from "react";
 import { IoLocationOutline } from "react-icons/io5";
 
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router";
 const HomeGroupCard = ({ group }) => {
   // console.log(group);
   const {
@@ -54,9 +55,12 @@ const HomeGroupCard = ({ group }) => {
                 </p>
               </div>
               <div className="card-actions justify-end mt-auto">
-                <button className="btn bg-[#C30E59] text-white">
+                <Link
+                  to={`/group-details/${_id}`}
+                  className="btn bg-[#C30E59] text-white"
+                >
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           </div>

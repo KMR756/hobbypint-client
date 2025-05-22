@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { IoLocationOutline } from "react-icons/io5";
 const AllGroup = () => {
   const groups = useLoaderData();
@@ -53,9 +53,12 @@ const AllGroup = () => {
                     </p>
                   </div>
                   <div className="card-actions justify-end mt-auto">
-                    <button className="btn bg-[#C30E59] text-white">
+                    <Link
+                      className="btn bg-[#C30E59] text-white"
+                      to={`/group-details/${group._id}`}
+                    >
                       View Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
