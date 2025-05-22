@@ -9,6 +9,9 @@ import Contract from "../pages/Contract";
 import Policy from "../pages/Policy";
 import Error from "../pages/Error";
 import Loading from "../components/Loading";
+import AuthLayout from "../layouts/AuthLayout";
+import SingIn from "../pages/SingIn";
+import SingUp from "../pages/SingUp";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +50,20 @@ export const router = createBrowserRouter([
       {
         path: "policy",
         Component: Policy,
+      },
+    ],
+  },
+  {
+    path: "auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "singIn",
+        Component: SingIn,
+      },
+      {
+        path: "singUp",
+        Component: SingUp,
       },
     ],
   },
