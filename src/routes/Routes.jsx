@@ -26,29 +26,29 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "allGroup",
+        path: "/allGroup",
         loader: () => fetch("http://localhost:3000/groups"),
         hydrateFallbackElement: <Loading></Loading>,
         Component: AllGroup,
       },
       {
-        path: "createGroup",
+        path: "/createGroup",
         Component: CreateGroup,
       },
       {
-        path: "myGroups",
+        path: "/myGroups",
         Component: MyGroup,
       },
       {
-        path: "about",
+        path: "/about",
         Component: AboutUs,
       },
       {
-        path: "contract",
+        path: "/contract",
         Component: Contract,
       },
       {
-        path: "policy",
+        path: "/policy",
         Component: Policy,
       },
     ],
@@ -58,11 +58,11 @@ export const router = createBrowserRouter([
     Component: AuthLayout,
     children: [
       {
-        path: "singIn",
+        path: "/auth/signin",
         Component: SingIn,
       },
       {
-        path: "singUp",
+        path: "/auth/signup",
         Component: SingUp,
       },
     ],

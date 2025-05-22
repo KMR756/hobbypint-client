@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router";
 import { IoLocationOutline } from "react-icons/io5";
 const AllGroup = () => {
   const groups = useLoaderData();
-  console.log(groups);
+  // console.log(groups);
 
   return (
     <>
@@ -13,7 +13,7 @@ const AllGroup = () => {
       </h1>
       <div className=" w-full lg:w-10/12  mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-10 px-10 py-10">
         {groups.map((group) => (
-          <Fade duration={1000} triggerOnce>
+          <Fade key={group._id} duration={1000} triggerOnce>
             <div>
               <div className="card w-full border-2 border-transparent hover:border-[#C30E59] hover:bg-[#f5eedd] transition-all duration-300  bg-white shadow-sm h-[400px]">
                 <figure>
