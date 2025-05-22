@@ -4,7 +4,10 @@ import logo from "../assets/logo-white.png";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 const SingUp = () => {
-  const { createUser } = use(AuthContext);
+  const { createUser, setUser, googleLogIn } = use(AuthContext);
+  const handleGoogleLogin = () => {
+    googleLogIn();
+  };
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,7 +17,18 @@ const SingUp = () => {
     const password = form.password.value;
     console.log({ name, email, photo, password });
 
-    createUser();
+    createUser(email, password)
+      .then((result) => {
+        // Signed up
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage, errorCode);
+        // ..
+      });
     e.target.reset();
   };
   return (
@@ -31,7 +45,10 @@ const SingUp = () => {
               </h1>
               <form onSubmit={handleRegister} className="w-full flex-1 mt-8">
                 <div className="flex flex-col items-center">
-                  <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                  <button
+                    onClick={handleGoogleLogin}
+                    className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                  >
                     <div className="bg-white p-2 rounded-full">
                       <svg className="w-4" viewBox="0 0 533.5 544.3">
                         <path

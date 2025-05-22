@@ -1,8 +1,34 @@
-import React from "react";
+import React, { use } from "react";
 import singIn from "/sign-in.svg";
 import logo from "../assets/logo-white.png";
 import { Link } from "react-router";
-const SingUp = () => {
+import { AuthContext } from "../provider/AuthProvider";
+const SingIn = () => {
+  const { logIn, googleLogIn } = use(AuthContext);
+  const handleGoogleLogin = () => {
+    googleLogIn();
+  };
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ email, password });
+
+    logIn(email, password)
+      .then((result) => {
+        // Signed in
+        const user = result.user;
+        console.log(user);
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage, errorCode);
+      });
+  };
   return (
     <>
       <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
@@ -17,7 +43,10 @@ const SingUp = () => {
               </h1>
               <div className="w-full flex-1 mt-8">
                 <div className="flex flex-col items-center">
-                  <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                  <button
+                    onClick={handleGoogleLogin}
+                    className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                  >
                     <div className="bg-white p-2 rounded-full">
                       <svg className="w-4" viewBox="0 0 533.5 544.3">
                         <path
@@ -48,19 +77,24 @@ const SingUp = () => {
                   </div>
                 </div>
 
-                <div className="mx-auto max-w-xs">
+                <form onSubmit={handleLogIn} className="mx-auto max-w-xs">
                   <input
+                    name="email"
                     className="mt-5 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                     type="email"
                     placeholder="Email"
                   />
 
                   <input
+                    name="password"
                     className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                     type="password"
                     placeholder="Password"
                   />
-                  <button className="mt-5 tracking-wide font-semibold bg-[#c30e59d0] text-gray-100 w-full py-4 rounded-lg hover:bg-[#C30E59] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                  <button
+                    type="submit"
+                    className="mt-5 tracking-wide font-semibold bg-[#c30e59d0] text-gray-100 w-full py-4 rounded-lg hover:bg-[#C30E59] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                  >
                     <svg
                       className="w-8 h-5 -ml-2"
                       fill="#ffffff"
@@ -101,7 +135,7 @@ const SingUp = () => {
                       </Link>
                     </span>
                   </p>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -116,4 +150,4 @@ const SingUp = () => {
   );
 };
 
-export default SingUp;
+export default SingIn;
