@@ -17,7 +17,9 @@ const GroupDetails = () => {
 
   return (
     <>
-      <GroupDetailsCard group={group}></GroupDetailsCard>
+      <div className="w-[95%] lg:w-10/12 mx-auto">
+        <GroupDetailsCard group={group}></GroupDetailsCard>
+      </div>
     </>
   );
 };

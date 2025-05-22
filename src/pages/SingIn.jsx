@@ -134,6 +134,7 @@ const SingIn = () => {
                     <span>
                       <Link
                         to={"/auth/signup"}
+                        state={location.state}
                         className="border-b  text-xs  border-gray-500 border-dotted"
                       >
                         Registration

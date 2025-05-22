@@ -1,12 +1,17 @@
 import React, { use } from "react";
 import designerLife from "/designer_life.svg";
 import logo from "../assets/logo-white.png";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 const SingUp = () => {
-  const { createUser, setUser, googleLogIn } = use(AuthContext);
+  const { createUser, setUser, googleLogIn, updateUser } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location, navigate);
+
   const handleGoogleLogin = () => {
     googleLogIn();
+    navigate(`${location.state ? location.state : "/"}`);
   };
   const handleRegister = (e) => {
     e.preventDefault();
@@ -21,7 +26,15 @@ const SingUp = () => {
       .then((result) => {
         // Signed up
         const user = result.user;
-        setUser(user);
+        navigate(`${location.state ? location.state : "/"}`);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;

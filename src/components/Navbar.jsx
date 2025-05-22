@@ -1,12 +1,13 @@
 import React, { use } from "react";
 import logo from "../assets/logo-white.png";
+import icons8 from "../assets/icons8.png";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
   const handleLogOut = () => {
-    console.log("user tring logout");
+    // console.log("user tring logout");
     logOut()
       .then(() => {
         // Sign-out successful.
@@ -97,7 +98,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <div>{user && user.email}</div>
+          {/* <div>{user && user.email}</div> */}
           <ul className="flex   gap-5 ">
             <li>
               <NavLink
@@ -150,7 +151,16 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar-end">
+        <div className="navbar-end gap-3">
+          <img
+            className={
+              user
+                ? "w-12 h-12 rounded-full object-cover"
+                : "w-12 h-12 rounded-full object-cover"
+            }
+            src={user ? user.photoURL : icons8}
+            alt=""
+          />
           {user ? (
             <button onClick={handleLogOut}>
               <NavLink

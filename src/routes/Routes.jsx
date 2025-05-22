@@ -31,15 +31,27 @@ export const router = createBrowserRouter([
         path: "/allGroup",
         loader: () => fetch("http://localhost:3000/groups"),
         hydrateFallbackElement: <Loading></Loading>,
-        Component: AllGroup,
+        element: (
+          <PrivateRoute>
+            <AllGroup></AllGroup>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/createGroup",
-        Component: CreateGroup,
+        element: (
+          <PrivateRoute>
+            <CreateGroup></CreateGroup>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myGroups",
-        Component: MyGroup,
+        element: (
+          <PrivateRoute>
+            <MyGroup></MyGroup>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
