@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 const MyGroupCard = ({ groups, myGroups, setMyGroups }) => {
@@ -31,7 +32,6 @@ const MyGroupCard = ({ groups, myGroups, setMyGroups }) => {
           .then((data) => {
             if (data.deletedCount) {
               if (data.deletedCount) {
-                // ✅ Update the state to remove deleted group
                 setMyGroups(myGroups.filter((g) => g._id !== _id));
               }
               Swal.fire({
@@ -62,7 +62,9 @@ const MyGroupCard = ({ groups, myGroups, setMyGroups }) => {
       <td>{groupCategory}</td>
       <td>{startDate}</td>
       <th className="space-y-3 lg:space-y-0 lg:space-x-3">
-        <button className="btn btn-primary btn-xs">Edit</button>
+        <Link to={`/update-group/${_id}`}>
+          <button className="btn btn-primary btn-xs">Edit</button>
+        </Link>
         <button
           onClick={() => handleDelete(_id)}
           className="btn btn-primary btn-xs"

@@ -14,6 +14,7 @@ import SingIn from "../pages/SingIn";
 import SingUp from "../pages/SingUp";
 import GroupDetails from "../pages/GroupDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import UpdateGroup from "../pages/UpdateGroup";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,16 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <GroupDetails></GroupDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-group/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/groups/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <UpdateGroup></UpdateGroup>
           </PrivateRoute>
         ),
       },

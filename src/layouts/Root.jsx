@@ -8,8 +8,9 @@ const Root = () => {
   return (
     <>
       <Navbar />
-
-      <Outlet />
+      <div className="min-h-[calc(100vh-520px)]">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );
