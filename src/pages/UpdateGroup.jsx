@@ -1,5 +1,7 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
+import Swal from "sweetalert2";
+import toast, { ToastBar, Toaster } from "react-hot-toast";
 
 const UpdateGroup = () => {
   const {
@@ -15,14 +17,13 @@ const UpdateGroup = () => {
     email,
   } = useLoaderData();
   console.log(groupName);
-
+  const navigation = useNavigate();
   const handleUpdateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const updateGroup = Object.fromEntries(formData.entries());
     console.log(updateGroup);
-
     fetch(`http://localhost:3000/groups/${_id}`, {
       method: "PUT",
       headers: {
@@ -32,7 +33,11 @@ const UpdateGroup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        toast.success("Group updated successfully...", {
+          duration: 4000,
+          position: "top-right",
+        });
+        navigation("/myGroups");
       });
   };
   return (
@@ -174,6 +179,7 @@ const UpdateGroup = () => {
               User Email :
             </label>
           </div>
+
           <button
             type="submit"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

@@ -21,9 +21,9 @@ const MyGroup = () => {
           <div className="overflow-x-auto">
             <table className="table bg-white">
               {/* head */}
-              <thead>
-                <tr>
-                  <th className="text-center">Group Name</th>
+              <thead className="text-[12px] md:text-xl lg:text-2xl ">
+                <tr className="">
+                  <th className="text-center py-6">Group Name</th>
                   <th>Category</th>
                   <th>Starting Date:</th>
                   <th>Action</th>

@@ -49,25 +49,25 @@ const MyGroupCard = ({ groups, myGroups, setMyGroups }) => {
       <td>
         <div className="flex items-center  gap-3">
           <div className="avatar">
-            <div className="mask mask-squircle h-12 w-12">
+            <div className="mask mask-squircle h-8 w-8 lg:h-12 lg:w-12">
               <img src={photo} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
-            <div className="font-bold">{groupName}</div>
-            <div className="text-sm opacity-50">{location}</div>
+            <div className="font-bold text-[10px] lg:text-xl">{groupName}</div>
+            <div className="text-[10px] lg:text-xl opacity-70">{location}</div>
           </div>
         </div>
       </td>
-      <td>{groupCategory}</td>
-      <td>{startDate}</td>
-      <th className="space-y-3 lg:space-y-0 lg:space-x-3">
+      <td className="font-bold text-[10px] lg:text-xl">{groupCategory}</td>
+      <td className="font-bold text-[10px] lg:text-xl">{startDate}</td>
+      <th className="space-y-3 lg:space-y-0 flex gap-2 lg:space-x-3">
         <Link to={`/update-group/${_id}`}>
-          <button className="btn btn-primary btn-xs">Edit</button>
+          <button className="btn btn-primary font-bond btn-sm">Edit</button>
         </Link>
         <button
           onClick={() => handleDelete(_id)}
-          className="btn btn-primary btn-xs"
+          className="btn btn-primary font-bond btn-sm"
         >
           Delete
         </button>

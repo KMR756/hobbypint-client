@@ -3,6 +3,8 @@ import logo from "../assets/logo-white.png";
 import icons8 from "../assets/icons8.png";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -11,7 +13,10 @@ const Navbar = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
-        console.log("sign out successfully");
+        toast.success(` ${user.displayName} is log in Successfully..`, {
+          duration: 4000,
+          position: "top-right",
+        });
       })
       .catch((error) => {
         // An error happened.
@@ -153,14 +158,19 @@ const Navbar = () => {
 
         <div className="navbar-end gap-3">
           <img
-            className={
-              user
-                ? "w-12 h-12 rounded-full object-cover"
-                : "w-12 h-12 rounded-full object-cover"
-            }
             src={user ? user.photoURL : icons8}
-            alt=""
+            alt="Profile"
+            data-tooltip-id="navbar-tooltip"
+            data-tooltip-content={user ? user.displayName : ""}
+            className="w-12 h-12  rounded-full object-cover"
           />
+          <Tooltip
+            id="navbar-tooltip"
+            place="left"
+            type="dark"
+            effect="solid"
+          />
+
           {user ? (
             <button onClick={handleLogOut}>
               <NavLink

@@ -3,6 +3,7 @@ import singIn from "/sign-in.svg";
 import logo from "../assets/logo-white.png";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 const SingIn = () => {
   const { logIn, googleLogIn } = use(AuthContext);
   const location = useLocation();
@@ -10,28 +11,41 @@ const SingIn = () => {
   const navigate = useNavigate();
   const handleGoogleLogin = () => {
     googleLogIn();
+
     navigate(`${location.state ? location.state : "/"}`);
+    toast.success(`log in Successfully..`, {
+      duration: 4000,
+      position: "top-right",
+    });
   };
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ email, password });
+    // console.log({ email, password });
 
     logIn(email, password)
       .then((result) => {
         // Signed in
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+
+        toast.success(` ${user.displayName} is log in Successfully..`, {
+          duration: 4000,
+          position: "top-right",
+        });
         navigate(`${location.state ? location.state : "/"}`);
 
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage, errorCode);
+        toast.error(errorMessage, {
+          duration: 4000,
+          position: "top-right",
+        });
       });
   };
   return (

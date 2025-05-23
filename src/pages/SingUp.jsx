@@ -3,6 +3,8 @@ import designerLife from "/designer_life.svg";
 import logo from "../assets/logo-white.png";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+// import { ToastContainer, toast } from "react-toastify";
+import toast, { ToastBar, Toaster } from "react-hot-toast";
 const SingUp = () => {
   const { createUser, setUser, googleLogIn, updateUser } = use(AuthContext);
   const location = useLocation();
@@ -11,6 +13,10 @@ const SingUp = () => {
 
   const handleGoogleLogin = () => {
     googleLogIn();
+    toast.success("Log In successfully..", {
+      duration: 4000,
+      position: "top-right",
+    });
     navigate(`${location.state ? location.state : "/"}`);
   };
   const handleRegister = (e) => {
@@ -21,7 +27,23 @@ const SingUp = () => {
     const photo = form.photo.value;
     const password = form.password.value;
     console.log({ name, email, photo, password });
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        <>
+          Password must have at least:
+          <br />• One uppercase letter
+          <br />• One lowercase letter
+          <br />• Minimum 6 characters
+        </>,
+        {
+          duration: 4000,
+          position: "top-center",
+        }
+      );
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         // Signed up
@@ -30,16 +52,23 @@ const SingUp = () => {
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
+            toast.success("Created Account Successfully..", {
+              duration: 4000,
+              position: "top-right",
+            });
           })
           .catch((error) => {
-            console.log(error);
+            toast.error(error, { duration: 3000, position: "top-right" });
             setUser(user);
           });
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage, errorCode);
+        toast.error(errorMessage, {
+          duration: 3000,
+          position: "top-right",
+        });
         // ..
       });
     e.target.reset();
