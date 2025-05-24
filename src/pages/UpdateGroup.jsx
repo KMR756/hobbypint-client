@@ -24,7 +24,7 @@ const UpdateGroup = () => {
     const formData = new FormData(form);
     const updateGroup = Object.fromEntries(formData.entries());
     console.log(updateGroup);
-    fetch(`http://localhost:3000/groups/${_id}`, {
+    fetch(`https://hobby-point-server.vercel.app/groups/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

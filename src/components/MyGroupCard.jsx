@@ -25,7 +25,7 @@ const MyGroupCard = ({ groups, myGroups, setMyGroups }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/groups/${_id}`, {
+        fetch(`https://hobby-point-server.vercel.app/groups/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
