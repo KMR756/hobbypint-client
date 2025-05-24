@@ -46,7 +46,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Explore", "Connect", "Create"]}
                   loop={0}
@@ -57,7 +57,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     "Discover exciting new hobbies, meet like-minded individuals, and collaborate on creative projects. HobbyPoint helps you turn interests into vibrant connections and lasting memories.",
@@ -83,7 +83,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Read", "Discuss", "Share"]}
                   loop={0}
@@ -94,7 +94,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     " Join local book lovers to read and reflect together. From fiction to philosophy, every discussion brings new insights and friendships through shared literary journeys.",
@@ -119,7 +119,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Sing", "Play", "Perform"]}
                   loop={0}
@@ -130,7 +130,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     "Share your musical passion by joining local jam sessions, singing circles, or performance meetups. Express yourself and find your stage among fellow music lovers.",
@@ -155,7 +155,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Hike", "Climb", "Adventure"]}
                   loop={0}
@@ -166,7 +166,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     " Love the outdoors? Connect with hiking crews and adventure seekers who organize trips to explore nature, conquer trails, and build strong bonds through every climb.",
@@ -191,7 +191,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Craft", "Design", "Inspire"]}
                   loop={0}
@@ -202,7 +202,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     "  Dive into the world of handmade crafts, DIY projects, and design challenges. Inspire and get inspired through workshops, fairs, and hobby groups that celebrate creativity.",
@@ -227,7 +227,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Code", "Build", "Innovate"]}
                   loop={0}
@@ -238,7 +238,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     "  Join tech enthusiasts and developers to build side projects, learn new tools, and innovate together. Perfect for coders, makers, and future startup founders.",
@@ -263,7 +263,7 @@ function Slider() {
             />
 
             <div className="absolute inset-0 flex-col flex items-start pt-8 pl-5 lg:pl-11  justify-start">
-              <h1 className="text-[#C30E59] text-3xl sm:text-3xl md:text-7xl font-bold">
+              <h1 className="text-[#C30E59] dark:text-white text-3xl sm:text-3xl md:text-7xl font-bold">
                 <Typewriter
                   words={["Sing", "Jam", "Perform"]}
                   loop={0}
@@ -274,7 +274,7 @@ function Slider() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-orange-700 text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
+              <p className="text-orange-700 dark:text-white text-sm lg:text-3xl font-bold w-full lg:w-1/2 pt-10 lg:mt-20  sm:text-lg md:text-xl px-4">
                 <Typewriter
                   words={[
                     " Connect with fellow music lovers through concert nights, open mic events, and local jam sessions. Whether you're a performer or a passionate listener, this is your stage to shine and share.",

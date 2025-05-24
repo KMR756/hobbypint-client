@@ -19,11 +19,11 @@ const MyGroup = () => {
       <div>
         <div className="w-[98%] lg:w-8/12 mx-auto my-20">
           <div className="overflow-x-auto">
-            <table className="table bg-white">
+            <table className="table bg-white dark:bg-gray-400">
               {/* head */}
               <thead className="text-[12px] md:text-xl lg:text-2xl ">
-                <tr className="">
-                  <th className="text-center py-6">Group Name</th>
+                <tr className="dark:text-black dark:border-white">
+                  <th className="text-center  py-6">Group Name</th>
                   <th>Category</th>
                   <th>Starting Date:</th>
                   <th>Action</th>

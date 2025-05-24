@@ -10,7 +10,7 @@ const MemberStories = () => {
     <>
       <div className="w-full lg:w-10/12 mx-auto my-15 px-7">
         <Fade direction="up" duration={2000} triggerOnce>
-          <h1 className="lato-bold text-3xl lg:text-6xl text-[#C30E59]">
+          <h1 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] dark:text-white">
             Real Stories from Our Members
           </h1>
         </Fade>

@@ -8,14 +8,14 @@ const AllGroup = () => {
 
   return (
     <>
-      <h1 className="lato-bold  text-6xl text-center py-10 text-[#C30E59] ">
+      <h1 className="lato-bold  text-6xl text-center py-10 text-[#C30E59] dark:text-white">
         ALL Groups:
       </h1>
       <div className=" w-full lg:w-10/12  mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-10 px-10 py-10">
         {groups.map((group) => (
           <Fade key={group._id} duration={1000} triggerOnce>
             <div>
-              <div className="card w-full border-2 border-transparent hover:border-[#C30E59] hover:bg-[#f5eedd] transition-all duration-300  bg-white shadow-sm h-[400px]">
+              <div className="card w-full border-2 border-transparent hover:border-[#C30E59] dark:hover:border-gray-200 hover:bg-[#f5eedd]  dark:hover:bg-gray-200 transition-all duration-300  bg-white dark:bg-gray-300 shadow-sm h-[400px]">
                 <figure>
                   <img
                     src={group.photo}
@@ -32,7 +32,7 @@ const AllGroup = () => {
                         size={24}
                         className="min-w-[24px] text-blue-600 mt-1"
                       />
-                      <p className="text-sm text-gray-400 leading-snug">
+                      <p className="text-sm text-gray-400 dark:text-black leading-snug">
                         {group.location}
                       </p>
                     </div>

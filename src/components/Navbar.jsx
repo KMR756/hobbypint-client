@@ -1,12 +1,34 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import logo from "../assets/logo-white.png";
 import icons8 from "../assets/icons8.png";
+import sunSvgrepoCom from "../assets/sun-svgrepo-com.svg";
+import moon from "../assets/moon-svgrepo-com.svg";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    const saveTheme = localStorage.getItem("theme");
+    const systemPefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark"
+    ).matches;
+    if (setTheme) {
+      setTheme(saveTheme);
+    } else if (systemPefersDark) {
+      setTheme("dark");
+    }
+  }, []);
+  useEffect(() => {
+    const html = document.documentElement;
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   const { user, logOut } = use(AuthContext);
   const handleLogOut = () => {
     // console.log("user tring logout");
@@ -23,7 +45,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="bg-[#F2F2F2]  py-3">
+    <div className="bg-[#F2F2F2] dark:bg-gray-400 py-3">
       <div className="navbar p-0  w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -110,8 +132,8 @@ const Navbar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-xl text-white  border border-blue-500 dark:border-blue-700   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500 dark:bg-blue-700"
+                    : "lato-bold text-xl text-blue-700  hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-700 dark:text-blue-700 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 Home
@@ -122,8 +144,8 @@ const Navbar = () => {
                 to={"/allGroup"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-xl text-white  border border-blue-500 dark:border-blue-700   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500 dark:bg-blue-700"
+                    : "lato-bold text-xl text-blue-700  hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-700 dark:text-blue-700 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 All Groups
@@ -134,8 +156,8 @@ const Navbar = () => {
                 to={"/createGroup"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-xl text-white  border border-blue-500 dark:border-blue-700   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500 dark:bg-blue-700"
+                    : "lato-bold text-xl text-blue-700  hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-700 dark:text-blue-700 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 Create Group
@@ -146,8 +168,8 @@ const Navbar = () => {
                 to={"/myGroups"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-xl text-white  border border-blue-500 dark:border-blue-700   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500 dark:bg-blue-700"
+                    : "lato-bold text-xl text-blue-700  hover:text-white border border-blue-700 hover:bg-blue-800   rounded-lg  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-700 dark:text-blue-700 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 My Groups
@@ -177,8 +199,8 @@ const Navbar = () => {
                 to={"/auth/signin"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-3xl  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-3xl  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-sm lg:text-xl text-white  border border-blue-500    rounded-3xl  px-2 lg:px-5 py-1 lg:py-2.5 text-center me-2 mb-2 bg-blue-500"
+                    : "lato-bold text-sm lg:text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-3xl px-2 lg:px-5 py-1 lg:py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 Log Out
@@ -190,14 +212,38 @@ const Navbar = () => {
                 to={"/auth/signin"}
                 className={({ isActive }) =>
                   isActive
-                    ? "lato-bold text-xl text-white  border border-blue-500    rounded-3xl  px-5 py-2.5 text-center me-2 mb-2 bg-blue-500"
-                    : "lato-bold text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-3xl  px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
+                    ? "lato-bold text-sm lg:text-xl text-white  border border-blue-500    rounded-3xl  px-2 lg:px-5 py-1 lg:py-2.5 text-center me-2 mb-2 bg-blue-500"
+                    : "lato-bold text-sm lg:text-xl text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800   rounded-3xl  px-2 lg:px-5 py-1 lg:py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 transition-all duration-200  "
                 }
               >
                 Sign In
               </NavLink>
             </button>
           )}
+          <div>
+            <button
+              onClick={toggleTheme}
+              aria-label={`switch to ${
+                theme === "dark" ? "light" : "dark"
+              } mode`}
+            >
+              {theme === "dark" ? (
+                <div>
+                  <img
+                    className="h-10 w-10 border rounded-full p-2 "
+                    src={sunSvgrepoCom}
+                    alt=""
+                  />
+                </div>
+              ) : (
+                <img
+                  className="h-10 w-10 border rounded-full p-2 "
+                  src={moon}
+                  alt=""
+                />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
+
 @plugin "daisyui";
 
-html body {
-  background: #f5eedd;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  body {
+    @apply bg-[#f5eedd] dark:bg-gray-800 text-gray-900 dark:text-gray-100;
+  }
 }
+
+/* html body {
+  background: #f5eedd;
+} */
 .lato-thin {
   font-family: "Lato", sans-serif;
   font-weight: 100;

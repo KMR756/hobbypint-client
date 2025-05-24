@@ -12,13 +12,13 @@ const WhyJoint = () => {
       <div className="w-full lg:w-10/12 mx-auto mt-15 px-7">
         <Fade direction="up" duration={2000} triggerOnce>
           {" "}
-          <h2 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] ">
+          <h2 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] dark:text-white">
             Why Join HobbyPoint?
           </h2>
         </Fade>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-10 mt-10">
-          <div className=" border-transparent border-2 rounded-3xl bg-white py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
+          <div className=" border-transparent border-2 rounded-3xl bg-white dark:bg-gray-300 py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
             <div className="w-[100%]  h-[200px] mx-auto  rounded-2xl overflow-hidden ">
               <Lottie
                 animationData={amin1}
@@ -35,7 +35,7 @@ const WhyJoint = () => {
               location.
             </p>
           </div>
-          <div className=" border-transparent border-2 rounded-3xl bg-white py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
+          <div className=" border-transparent border-2 rounded-3xl bg-white dark:bg-gray-300 py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
             <div className="w-[100%] h-[200px] mx-auto  rounded-2xl overflow-hidden ">
               <Lottie
                 animationData={meet}
@@ -51,7 +51,7 @@ const WhyJoint = () => {
               Build friendships and connections through shared activities.
             </p>
           </div>
-          <div className=" border-transparent border-2 rounded-3xl bg-white py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
+          <div className=" border-transparent border-2 rounded-3xl bg-white dark:bg-gray-300 py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
             <div className="w-[100%] h-[200px] mx-auto  rounded-2xl overflow-hidden ">
               <Lottie
                 animationData={group}
@@ -67,7 +67,7 @@ const WhyJoint = () => {
               Can’t find your thing? Start a new group and grow a community.
             </p>
           </div>
-          <div className=" border-transparent border-2 rounded-3xl bg-white py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
+          <div className=" border-transparent border-2 rounded-3xl bg-white dark:bg-gray-300 py-5 hover:bg-[#f5eedd] hover:border-2 hover:border-[#C30E59] transition-all duration-300 ">
             <div className="w-[100%] h-[200px] mx-auto  rounded-2xl overflow-hidden ">
               <Lottie
                 animationData={update}

@@ -43,12 +43,12 @@ const UpdateGroup = () => {
   return (
     <div>
       <div>
-        <h1 className="lato-bold text-center mt-10 text-6xl text-[#C30E59] ">
+        <h1 className="lato-bold text-center mt-10 text-6xl text-[#C30E59] dark:text-white">
           Update you group
         </h1>
         <form
           onSubmit={handleUpdateGroup}
-          className="w-full lg:w-1/2 mx-auto bg-white p-20 my-10 rounded-3xl"
+          className="w-full lg:w-1/2 mx-auto bg-white dark:bg-gray-400 p-20 my-10 rounded-3xl"
         >
           <div className="relative z-0 w-full mb-5 group">
             <input

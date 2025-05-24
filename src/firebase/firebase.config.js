@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAJbJw-F8GUznCcUYX4VAWLCgYbKrBdGY8",
-  authDomain: "hobby-point-app.firebaseapp.com",
-  projectId: "hobby-point-app",
-  storageBucket: "hobby-point-app.firebasestorage.app",
-  messagingSenderId: "182972606365",
-  appId: "1:182972606365:web:9b7fb5574bbe171d1db174",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

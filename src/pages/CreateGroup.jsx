@@ -64,12 +64,12 @@ const CreateGroup = () => {
   return (
     <>
       <div>
-        <h1 className="lato-bold text-center mt-10 text-6xl text-[#C30E59] ">
+        <h1 className="lato-bold text-center mt-10 text-6xl text-[#C30E59] dark:text-white">
           Create a new hobby group
         </h1>
         <form
           onSubmit={handleForm}
-          className="w-full lg:w-1/2 mx-auto bg-white p-20 my-10 rounded-3xl"
+          className="w-full lg:w-1/2 mx-auto bg-white dark:bg-gray-400 p-20 my-10 rounded-3xl"
         >
           <div className="relative z-0 w-full mb-5 group">
             <input
@@ -79,13 +79,13 @@ const CreateGroup = () => {
               placeholder=" "
               required
             />
-            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Group Name :
             </label>
           </div>
 
           <div>
-            <label className="lato-bold block mb-2  font-medium text-gray-500 ">
+            <label className="lato-bold block mb-2  font-medium text-gray-500 dark:text-black">
               Select your group name :
             </label>
             <select
@@ -107,7 +107,7 @@ const CreateGroup = () => {
           </div>
 
           <div>
-            <label className="lato-bold block mb-2  font-medium text-gray-500 mt-5">
+            <label className="lato-bold block mb-2  font-medium text-gray-500 dark:text-black mt-5">
               Description :
             </label>
             <textarea
@@ -126,7 +126,7 @@ const CreateGroup = () => {
               placeholder=" "
               required
             />
-            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Meeting Location :
             </label>
           </div>
@@ -134,11 +134,11 @@ const CreateGroup = () => {
             <input
               type="text"
               name="maxMember"
-              className="block lato-bold py-2.5 px-0 w-full  text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block lato-bold py-2.5 px-0 w-full  text-gray-900  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
-            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Max Members :
             </label>
           </div>
@@ -150,7 +150,7 @@ const CreateGroup = () => {
               placeholder=" "
               required
             />
-            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500 dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Start date (DD-MM-YYYY) :
             </label>
           </div>
@@ -163,7 +163,7 @@ const CreateGroup = () => {
               placeholder=" "
               required
             />
-            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            <label className="lato-bold peer-focus:font-medium absolute  text-gray-500 dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Image URL :
             </label>
           </div>

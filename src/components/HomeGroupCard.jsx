@@ -20,7 +20,7 @@ const HomeGroupCard = ({ group }) => {
     <>
       <Fade duration={1000} triggerOnce>
         <div>
-          <div className="card w-full border-2 border-transparent hover:border-[#C30E59] hover:bg-[#f5eedd] transition-all duration-300  bg-white shadow-sm h-[400px]">
+          <div className="card w-full border-2 border-transparent hover:border-[#C30E59] dark:hover:border-white hover:bg-[#f5eedd] dark:hover:bg-white transition-all duration-300  bg-white dark:bg-gray-200 shadow-sm h-[400px]">
             <figure>
               <img src={photo} className="h-[200px] w-full object-cover" />
             </figure>
@@ -34,7 +34,7 @@ const HomeGroupCard = ({ group }) => {
                     size={24}
                     className="min-w-[24px] text-blue-600 mt-1"
                   />
-                  <p className="text-sm text-gray-400 leading-snug">
+                  <p className="text-sm text-gray-400 dark:text-black leading-snug">
                     {location}
                   </p>
                 </div>
@@ -46,7 +46,7 @@ const HomeGroupCard = ({ group }) => {
               </div>
             </div>
             <div className="card-body flex flex-col justify-between">
-              <div className="border-transparent p-4 rounded-3xl bg-[#FFFBDE60] hover:bg-white transition-all duration-300  overflow-hidden max-h-[100px] text-ellipsis">
+              <div className="border-transparent p-4 rounded-3xl bg-[#FFFBDE60] dark:bg-gray-300 hover:bg-white dark:hover:bg-gray-400 transition-all duration-300  overflow-hidden max-h-[100px] text-ellipsis">
                 <h2 className="lato-bold text-xl text-[#C30E59]">
                   {groupName}
                 </h2>

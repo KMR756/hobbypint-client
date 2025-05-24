@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#F2F2F2] rounded-lg shadow-sm  ">
+      <footer className="bg-[#F2F2F2] dark:bg-gray-400 rounded-lg shadow-sm  ">
         <div className="w-10/12  mx-auto  md:py-8">
           <div className="sm:flex  sm:items-center px-15 sm:justify-between">
             <Link

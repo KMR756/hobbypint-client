@@ -29,7 +29,7 @@ const HomeGroups = ({ groups }) => {
         triggerOnce
       >
         {" "}
-        <h1 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] ">
+        <h1 className="lato-bold text-3xl lg:text-6xl text-[#C30E59] dark:text-white">
           Ongoing groups:
         </h1>
       </Fade>
