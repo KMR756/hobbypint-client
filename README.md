@@ -38,12 +38,6 @@
 
 ---
 
-## 📸 Preview
-
-![HobbyPoint Screenshot](https://hobby-point-app.web.app/screenshot.jpg) <!-- Replace with actual screenshot URL or local path -->
-
----
-
 ## 📦 Installation
 
 To run the project locally:
